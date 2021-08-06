@@ -4,7 +4,6 @@ from tkinter.filedialog import askopenfile
 from tkinter import filedialog
 
 window = tk.Tk()
-window.resizable(False, False)
 window.title("Convertisseur d'image")
 window.eval('tk::PlaceWindow . center')
 window.geometry("650x560")
@@ -166,15 +165,15 @@ instructions_save.place(x=206.5,y=170)
 logo = Image.open("logo_i_like.png")
 logo = logo.resize((198, 149))
 logo = ImageTk.PhotoImage(logo)
-logo_label = tk.Label(home, image=logo, bg="#292d3e",)
+logo_label = tk.Label(home, image=logo, bg="#292d3e", highlightbackground="#292d3e")
 logo_label.image = logo
 logo_label.place(x=226, y=10)
 
-logo_label2 = tk.Label(gnb_frame, image=logo, bg="#292d3e")
+logo_label2 = tk.Label(gnb_frame, image=logo, bg="#292d3e", highlightbackground="#292d3e")
 logo_label2.image = logo
 logo_label2.place(x=226, y=10)
 
-logo_label3 = tk.Label(save_frame, image=logo, bg="#292d3e")
+logo_label3 = tk.Label(save_frame, image=logo, bg="#292d3e", highlightbackground="#292d3e")
 logo_label3.image = logo
 logo_label3.place(x=226, y=10)
 
@@ -198,19 +197,19 @@ logo_label3.place(x=226, y=10)
 
 greyscale_btn = Image.open("nuances_de_gris_button.png")
 greyscale_btn = ImageTk.PhotoImage(greyscale_btn)
-greyscale_btn_label = tk.Button(gnb_frame, image=greyscale_btn, border=0, bg="#292d3e", activebackground="#292d3e", command=lambda:greyscale())
+greyscale_btn_label = tk.Button(gnb_frame, image=greyscale_btn, border=0, bg="#292d3e" , activebackground="#292d3e",highlightbackground="#292d3e", command=lambda:greyscale())
 greyscale_btn_label.image = greyscale_btn
 greyscale_btn_label.place(x=50,y=190)
 
 negative_btn = Image.open("negatif_button.png")
 negative_btn = ImageTk.PhotoImage(negative_btn)
-negative_btn_label = tk.Button(gnb_frame, image=negative_btn, border=0, bg="#292d3e", activebackground="#292d3e", command=lambda:negative())
+negative_btn_label = tk.Button(gnb_frame, image=negative_btn, border=0, bg="#292d3e", activebackground="#292d3e", highlightbackground="#292d3e", command=lambda:negative())
 negative_btn_label.image = negative_btn
 negative_btn_label.place(x=250,y=190)
 
 black_white_btn = Image.open("noir&blanc_button.png")
 black_white_btn = ImageTk.PhotoImage(black_white_btn)
-black_white_btn_label = tk.Button(gnb_frame, image=black_white_btn, border=0, bg="#292d3e", activebackground="#292d3e", command=lambda:black_white())
+black_white_btn_label = tk.Button(gnb_frame, image=black_white_btn, border=0, bg="#292d3e",  activebackground="#292d3e",highlightbackground="#292d3e", command=lambda:black_white())
 black_white_btn_label.image = black_white_btn
 black_white_btn_label.place(x=450,y=190)
 
@@ -219,20 +218,20 @@ black_white_btn_label.place(x=450,y=190)
 save_btn = Image.open("save_button.png")
 save_btn = save_btn.resize((500,87))
 save_btn = ImageTk.PhotoImage(save_btn)
-save_btn_label = tk.Button(save_frame, image=save_btn, width=500, height=87, border=0, bg="#292d3e", activebackground="#292d3e", command=lambda:save_file())
+save_btn_label = tk.Button(save_frame, image=save_btn, width=500, height=87, border=0, bg="#292d3e", activebackground="#292d3e", highlightbackground="#292d3e", command=lambda:save_file())
 save_btn_label.image = save_btn
 save_btn_label.place(x=75,y=440)
 
 
 home_btn = Image.open("home_btn.png")
 home_btn = ImageTk.PhotoImage(home_btn)
-home_btn_label = tk.Button(gnb_frame, image=home_btn, width=50, height=50, border=0, bg="#292d3e", activebackground="#292d3e", command=lambda:show_frame(home))
+home_btn_label = tk.Button(gnb_frame, image=home_btn, width=50, height=50, border=0, bg="#292d3e", activebackground="#292d3e", highlightbackground="#292d3e", command=lambda:show_frame(home))
 home_btn_label.image = home_btn
 home_btn_label.place(x=550,y=40)
 
 home_btn = Image.open("home_btn.png")
 home_btn = ImageTk.PhotoImage(home_btn)
-home_btn_label = tk.Button(save_frame, image=home_btn, width=50, height=50, border=0, bg="#292d3e", activebackground="#292d3e", command=lambda:show_frame(home))
+home_btn_label = tk.Button(save_frame, image=home_btn, width=50, height=50, border=0, bg="#292d3e", activebackground="#292d3e", highlightbackground="#292d3e", command=lambda:show_frame(home))
 home_btn_label.image = home_btn
 home_btn_label.place(x=550,y=40)
 
@@ -243,7 +242,7 @@ home_btn_label.place(x=550,y=40)
 
 browse_logo = Image.open("browse_logo.png")
 browse_logo = ImageTk.PhotoImage(browse_logo)
-browse_logo_label = tk.Button(home, image=browse_logo, border=0, bg="#292d3e", activebackground="#292d3e", command=lambda:open_file())
+browse_logo_label = tk.Button(home, image=browse_logo, border=0, bg="#292d3e", activebackground="#292d3e", highlightbackground="#292d3e", command=lambda:open_file())
 browse_logo_label.image = browse_logo
 browse_logo_label.place(x=179.5, y=270)
 
@@ -258,4 +257,3 @@ show_frame(home)
 #==============Tester image resize si pillow à trop de valeurs============#
 
 window.mainloop()
-
